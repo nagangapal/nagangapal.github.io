@@ -1,3 +1,7 @@
+import colors1 from '../assets/projects/colors/colors1.png';
+import colors2 from '../assets/projects/colors/colors2.png';
+import colors3 from '../assets/projects/colors/colors3.png';
+
 export const portfolios = {
     fullstack: {
         id: 'fullstack',
@@ -34,7 +38,12 @@ export const portfolios = {
                 { degree: "Bachelor of Engineering (Computer Science)", school: "Thapar Institute", year: "Patiala, IN" }
             ],
             projects: [
-                { name: "ColorsMultiplayer", desc: "A Flutter App for playing turn-based Candy Crush with an agent, featuring a hint system." }
+                {
+                    name: "ColorsMultiplayer",
+                    desc: "A Flutter App for playing turn-based Candy Crush with an agent, featuring a hint system.",
+                    link: "https://colorsmultiplayer.web.app/",
+                    images: [colors1, colors2, colors3]
+                }
             ]
         }
     },
@@ -79,7 +88,11 @@ export const portfolios = {
                 { degree: "Bachelor of Engineering (Computer Science)", school: "Thapar Institute", year: "Patiala, IN" }
             ],
             projects: [
-                { name: "ColorsMultiplayer", desc: "Backend API integration demonstration: A turn-based game Flutter App playing against an agent." }
+                {
+                    name: "ColorsMultiplayer",
+                    desc: "Backend API integration demonstration: A turn-based game Flutter App playing against an agent.",
+                    link: "https://colorsmultiplayer.web.app/"
+                }
             ]
         }
     },
@@ -130,7 +143,11 @@ export const portfolios = {
                 { degree: "M.S. (Computer Science)", school: "USC", year: "Los Angeles, CA" }
             ],
             projects: [
-                { name: "ColorsMultiplayer", desc: "AI Application: Turn-based game with an agent, showcasing Machine Learning application." }
+                {
+                    name: "ColorsMultiplayer",
+                    desc: "AI Application: Turn-based game with an agent, showcasing Machine Learning application.",
+                    link: "https://colorsmultiplayer.web.app/"
+                }
             ]
         }
     }

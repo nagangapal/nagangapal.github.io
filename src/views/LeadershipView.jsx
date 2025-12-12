@@ -68,7 +68,19 @@ const LeadershipView = ({ data }) => {
                     <h2 style={{ fontSize: '2rem', borderBottom: '1px solid #e2e8f0', paddingBottom: '1rem', marginBottom: '2rem' }}>Key Initiatives</h2>
                     {data.content.projects.map((proj, i) => (
                         <div key={i} style={{ marginBottom: '2rem', padding: '1.5rem', background: '#f8fafc', borderRadius: '4px' }}>
-                            <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{proj.name}</h3>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.5rem' }}>
+                                <h3 style={{ fontSize: '1.2rem' }}>{proj.name}</h3>
+                                {proj.link && (
+                                    <a
+                                        href={proj.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{ color: 'var(--professional-primary)', fontSize: '0.9rem', fontStyle: 'italic' }}
+                                    >
+                                        View Project &rarr;
+                                    </a>
+                                )}
+                            </div>
                             <p style={{ color: '#475569' }}>{proj.desc}</p>
                         </div>
                     ))}

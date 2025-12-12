@@ -67,7 +67,19 @@ const BackendView = ({ data }) => {
                         <p style={{ color: '#aaa', marginBottom: '1rem' }}>// Compiled Projects</p>
                         {data.content.projects.map((proj, i) => (
                             <div key={i} style={{ marginBottom: '1rem' }}>
-                                <span style={{ color: 'var(--terminal-secondary)' }}>&gt;</span> {proj.name}
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                    <span><span style={{ color: 'var(--terminal-secondary)' }}>&gt;</span> {proj.name}</span>
+                                    {proj.link && (
+                                        <a
+                                            href={proj.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{ color: 'var(--terminal-secondary)', fontSize: '0.9rem', textDecoration: 'none' }}
+                                        >
+                                            [open_link]
+                                        </a>
+                                    )}
+                                </div>
                                 <p style={{ paddingLeft: '1.2rem', color: '#888', fontSize: '0.9rem' }}>{proj.desc}</p>
                             </div>
                         ))}

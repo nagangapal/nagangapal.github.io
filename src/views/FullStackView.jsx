@@ -47,8 +47,70 @@ const FullStackView = ({ data }) => {
                 <div style={{ display: 'grid', gap: '2rem' }}>
                     {data.content.projects.map((project, i) => (
                         <div key={i} style={{ padding: '2rem', background: 'rgba(56, 189, 248, 0.05)', borderRadius: '1rem', border: '1px solid rgba(56, 189, 248, 0.1)' }}>
-                            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{project.name}</h3>
-                            <p style={{ opacity: 0.8 }}>{project.desc}</p>
+                            <div style={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                marginBottom: '1rem',
+                                flexWrap: 'wrap',
+                                gap: '1rem'
+                            }}>
+                                <h3 style={{ fontSize: '1.5rem', margin: 0 }}>{project.name}</h3>
+                                {project.link && (
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        style={{
+                                            padding: '0.5rem 1rem',
+                                            background: 'rgba(56, 189, 248, 0.2)',
+                                            color: '#38bdf8',
+                                            borderRadius: '20px',
+                                            textDecoration: 'none',
+                                            fontSize: '0.9rem',
+                                            border: '1px solid rgba(56, 189, 248, 0.4)',
+                                            whiteSpace: 'nowrap'
+                                        }}
+                                    >
+                                        Visit App &rarr;
+                                    </a>
+                                )}
+                            </div>
+                            <p style={{ opacity: 0.8, marginBottom: '1.5rem' }}>{project.desc}</p>
+
+                            {project.images && (
+                                <div style={{
+                                    display: 'flex',
+                                    gap: '1rem',
+                                    overflowX: 'auto',
+                                    paddingBottom: '1rem',
+                                    marginBottom: '-0.5rem',
+                                    WebkitOverflowScrolling: 'touch',
+                                    scrollbarWidth: 'none',
+                                    msOverflowStyle: 'none'
+                                }}>
+                                    <style>{`
+                                        .view-fullstack ::-webkit-scrollbar {
+                                            display: none;
+                                        }
+                                    `}</style>
+                                    {project.images.map((img, idx) => (
+                                        <img
+                                            key={idx}
+                                            src={img}
+                                            alt={`${project.name} screenshot ${idx + 1}`}
+                                            style={{
+                                                height: '200px',
+                                                borderRadius: '8px',
+                                                border: '1px solid rgba(255,255,255,0.1)',
+                                                flexShrink: 0,
+                                                maxWidth: '100%',
+                                                objectFit: 'contain'
+                                            }}
+                                        />
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
